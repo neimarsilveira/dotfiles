@@ -178,11 +178,12 @@ if [ -d ~/.bashrc.d ]; then
 	done
 fi
 
-alias new_proj=". ~/pCloudDrive/03_rsc/06_software/linux_scripts_and_files/newProject.sh"
+alias new_latex_proj=". ~/pCloudDrive/03_rsc/06_software/linux_scripts_and_files/new_latex_report.sh"
+alias new_proj=". ~/pCloudDrive/03_rsc/06_software/linux_scripts_and_files/new_project.sh"
 alias cpuf="while true; do cat /proc/cpuinfo | grep -i MHz; sleep 0.5; clear; done;"
 # alias cpuu="grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {print usage}' | awk '{printf(\"%.1f\n\", \$1)}'"
 alias nano=micro
-alias bat="bat --color=always -P"
+alias bat="bat --color=always"
 alias la='ls -Alh --color=auto'
 
 ##### FUNCTIONS #####
