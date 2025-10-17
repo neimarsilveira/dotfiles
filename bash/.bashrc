@@ -185,6 +185,7 @@ alias cpuf="while true; do cat /proc/cpuinfo | grep -i MHz; sleep 0.5; clear; do
 alias nano=micro
 alias bat="bat --color=always"
 alias la='ls -Alh --color=auto'
+alias open=xdg-open
 # setting micro as EDITOR
 export EDITOR=micro
 
