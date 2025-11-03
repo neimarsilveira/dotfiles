@@ -97,9 +97,9 @@ function __setprompt
 	# local SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
 	# local SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
 	# if [ $SSH2_IP ] || [ $SSH_IP ] ; then
-		# PS1+="(\[${RED}\]\u@\h"
+	# 	PS1+="\[${LIGHTRED}\]\u@\h"
 	# else
-		# PS1+="(\[${RED}\]\u"
+	# 	PS1+="\[${LIGHTRED}\]\u"
 	# fi
 
 	# Current directory
@@ -164,7 +164,7 @@ bind "set completion-ignore-case on"
 ##### UTILS ##### 
 
 # Fuzzy Find integration
-eval "$(fzf --bash)"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 
 
