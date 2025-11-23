@@ -164,7 +164,8 @@ bind "set completion-ignore-case on"
 ##### UTILS ##### 
 
 # Fuzzy Find integration
-eval "$(fzf --bash)"
+# eval "$(fzf --bash)"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 
 
