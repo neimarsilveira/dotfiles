@@ -1,7 +1,9 @@
 My personal dotfiles repo to be used with GNU stow.
+
 References:
-    - https://dev.to/insideee_dev/how-to-manage-your-dotfiles-like-a-pro-with-git-and-stow-3pg1
-    - https://www.youtube.com/watch?v=NoFiYOqnC4o&pp=ygUNc3RvdyBkb3RmaWxlcw%3D%3D
+
+- https://dev.to/insideee_dev/how-to-manage-your-dotfiles-like-a-pro-with-git-and-stow-3pg1
+- https://www.youtube.com/watch?v=NoFiYOqnC4o&pp=ygUNc3RvdyBkb3RmaWxlcw%3D%3D
 
 ## Setting up a new machine
 

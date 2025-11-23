@@ -97,9 +97,9 @@ function __setprompt
 	# local SSH_IP=`echo $SSH_CLIENT | awk '{ print $1 }'`
 	# local SSH2_IP=`echo $SSH2_CLIENT | awk '{ print $1 }'`
 	# if [ $SSH2_IP ] || [ $SSH_IP ] ; then
-		# PS1+="(\[${RED}\]\u@\h"
+	# 	PS1+="\[${LIGHTRED}\]\u@\h"
 	# else
-		# PS1+="(\[${RED}\]\u"
+	# 	PS1+="\[${LIGHTRED}\]\u"
 	# fi
 
 	# Current directory
@@ -183,9 +183,10 @@ alias new_latex_proj=". ~/pCloudDrive/03_rsc/06_software/linux_scripts_and_files
 alias new_proj=". ~/pCloudDrive/03_rsc/06_software/linux_scripts_and_files/new_project.sh"
 alias cpuf="while true; do cat /proc/cpuinfo | grep -i MHz; sleep 0.5; clear; done;"
 # alias cpuu="grep 'cpu ' /proc/stat | awk '{usage=(\$2+\$4)*100/(\$2+\$4+\$5)} END {print usage}' | awk '{printf(\"%.1f\n\", \$1)}'"
-alias nano=micro
+# alias nano=micro
 alias bat="bat --color=always"
 alias la='ls -Alh --color=auto'
+alias open=xdg-open
 # setting micro as EDITOR
 export EDITOR=micro
 
