@@ -285,14 +285,15 @@ function memwatch() {
     done
 }
 
-# ISET function: sums reactions of output.txt
-function sum_reactions() {
-    if [ "$#" -ne 1 ]; then
-        echo "Usage: sum_reactions <column_number>"
+# ISET function: sums reactions of file
+function iset_sum_reactions() {
+    if [ "$#" -ne 2 ]; then
+        echo "Usage: iset_sum_reactions <file_name> <column_number>"
         return 1
     fi
 
-    column_number=$1
+    file_name=$1
+    column_number=$2
 
     awk -F, -v col="$column_number" '
         /Reac/ {
@@ -301,25 +302,31 @@ function sum_reactions() {
 
             if (first_id == "") {
                 first_id = id
+                step = 0
             } else if (id == first_id && seen_first_id) {
                 # New step started
                 step++
-                first_id = id
             }
 
             values[step] += value
-
-            # Set seen_first_id true after the first time we hit first_id
-            if (id == first_id) {
-                seen_first_id = 1
-            }
+            seen_first_id = 1
         }
         END {
             for (i = 0; i <= step; i++) {
                 printf "Step %d: %.2f\n", i + 1, values[i]
             }
         }
-    ' output.txt
+    ' ${file_name}
+}
+
+function iset_print_iterations() {
+  if [ "$#" -ne 1 ]; then
+    echo "Usage: iset_print_iterationss <file_name>"
+    return 1
+  fi
+  
+  file_name=$1
+  grep -in "NonLinAnalysis::nonlinearSolve: Converged load step" ${file_name} | awk '{ printf "Step %4s took %3s iterations\n", $6, $(NF) }'
 }
 
 unset rc
