@@ -288,12 +288,22 @@ function memwatch() {
 # ISET function: sums reactions of file
 function iset_sum_reactions() {
     if [ "$#" -ne 2 ]; then
-        echo "Usage: iset_sum_reactions <file_name> <column_number>"
+        echo "Usage: iset_sum_reactions <file_name> <dof>"
         return 1
     fi
 
     file_name=$1
-    column_number=$2
+    dof=$2
+
+    case "$dof" in
+      dx) column_number=3;;
+      dy) column_number=4;;
+      dz) column_number=5;;
+      *) 
+        echo "Unknown value for <dof>. Valid options are: 'dx', 'dy' and 'dz' "; 
+        return -1;
+        ;;
+    esac
 
     awk -F, -v col="$column_number" '
         /Reac/ {
