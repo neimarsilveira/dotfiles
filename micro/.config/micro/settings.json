@@ -3,6 +3,7 @@
     "divreverse": false,
     "savecursor": true,
     "saveundo": true,
+    "scrollbar": true,
     "softwrap": true,
     "tabsize": 2,
     "tabstospaces": true
