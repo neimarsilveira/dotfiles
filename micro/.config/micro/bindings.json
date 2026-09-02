@@ -1,5 +1,14 @@
 {
     "Alt-/": "lua:comment.comment",
     "CtrlUnderscore": "lua:comment.comment",
-    "Ctrl-p": "command:jumptag"
+    // Code navigation
+    "Alt-p": "command:jumptag",
+    // LSP
+    "Alt-d": "command:lsp goto-definition",
+    "Alt-r": "command:lsp find-references",
+    "Alt-h": "command:lsp hover",
+    "Alt-s": "command:lsp document-symbols",
+    "Alt-i": "command:lsp diagnostic-info",
+    "F2": "command:lsp rename",
+    "F8": "command:lsp format",
 }
