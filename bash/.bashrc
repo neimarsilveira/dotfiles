@@ -168,6 +168,14 @@ bind "set completion-ignore-case on"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_CTRL_T_OPTS="--preview 'bat -n --color=always --line-range :500 {}'"
 
+# yazi quit to cwd function
+function y() {
+	local tmp cwd; tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+	command rm -f -- "$tmp"
+}
 
 #### ALIASES ####
 # User specific aliases and functions

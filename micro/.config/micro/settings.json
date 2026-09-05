@@ -1,14 +1,12 @@
 {
-    "colorscheme": "dukedark-tc",
+    "colorscheme": "gruvbox_v2",
     "diffgutter": true,
     "divreverse": false,
     "linter": false,
+    "mkparents": true,
     "savecursor": true,
     "saveundo": true,
-    // We no longer need the scrollbar now that the percentage is shown in the status bar
-    // "scrollbar": true,
     "softwrap": true,
-    // Comment if mlsp is not installed!
     "statusformatl": "$(filename) $(modified)($(line),$(col)) $(percentage)% | ft:$(opt:filetype) | µlsp:$(mlsp.status)",
     "tabsize": 2,
     "tabstospaces": true
